@@ -22,16 +22,26 @@
                     <a class="btn btn-success" href="{{route('users.index') }}">
                         <i class="bi bi-people"></i> Manage Users</a>
                     @endcanany
-                    @canany(['create-product', 'edit-product',
-                    'delete-product'])
-                    <a class="btn btn-warning" href="{{route('products.index') }}">
-                        <i class="bi bi-bag"></i> Manage Products</a>
+                    @canany(['create-masuk', 'edit-masuk',
+                    'delete-masuk'])
+                    <a class="btn btn-warning" href="{{route('masukbahan.index') }}">
+                        <i class="bi bi-bag"></i> Manage Barang Masuk</a>
                     @endcanany
-                    @canany(['create-mahasiswa', 'edit-mahasiswa', 'show-mahasiswa',
-                    'delete-mahasiswa'])
-                    <a class="btn btn-warning" href="{{route('mahasiswas.index') }}">
-                        <i class="bi bi-bag"></i> Manage Mahasiswa</a>
+                    @canany(['create-stok', 'edit-stok',
+                    'delete-stok','show-stock'])
+                    <a class="btn btn-warning" href="{{route('stokbahan.index') }}">
+                        <i class="bi bi-bag"></i> Manage Stok</a>
                     @endcanany
+                    @canany(['create-keluar', 'edit-keluar',
+                    'delete-keluar'])
+                    <a class="btn btn-warning" href="{{route('keluarproduk.index') }}">
+                        <i class="bi bi-bag"></i> Manage Barang Keluar</a>
+                    @endcanany
+                    @canany(['show-dashboard'])
+                    <a class="btn btn-warning" href="{{route('dashboard.index') }}">
+                        <i class="bi bi-bag"></i> Dashboard</a>
+                    @endcanany
+
                     <p>&nbsp;</p>
                 </div>
             </div>

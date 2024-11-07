@@ -40,4 +40,10 @@ protected $casts = [
     'email_verified_at' => 'datetime',
     'password' => 'hashed',
     ];
+
+    // Relasi one-to-one ke Notifikasi
+    public function notifikasi()
+    {
+        return $this->hasOne(Notifikasi::class, 'notifikasi_id');
+    }
 }

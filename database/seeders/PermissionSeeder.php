@@ -20,17 +20,32 @@ class PermissionSeeder extends Seeder
         'create-user',
         'edit-user',
         'delete-user',
-        'create-product',
-        'edit-product',
-        'delete-product',
-        'create-mahasiswa',
-        'show-mahasiswa',
-        'edit-mahasiswa',
-        'delete-mahasiswa',
+        'create-stok',
+        'edit-stok',
+        'show-stok',
+        'delete-stok',
+        'create-masuk',
+        'edit-masuk',
+        'show-masuk',
+        'delete-masuk',
+        'create-keluar',
+        'edit-keluar',
+        'show-keluar',
+        'delete-keluar',
+        'show-notifikasi',
+        'show-dashboard',
+        'show-stok'
         ];
 // Looping and Inserting Array's Permissions into PermissionTable
+    // foreach ($permissions as $permission) {
+    //     Permission::create(['name' => $permission]);
+    // }
+
     foreach ($permissions as $permission) {
-        Permission::create(['name' => $permission]);
+        // Cek apakah permission sudah ada sebelum membuatnya
+        if (!Permission::where('name', $permission)->where('guard_name', 'web')->exists()) {
+            Permission::create(['name' => $permission, 'guard_name' => 'web']);
+        }
     }
 }
 }

@@ -14,39 +14,47 @@ class RoleSeeder extends Seeder
     public function run(): void
     {
         Role::create(['name' => 'Super Admin']);
-        $admin = Role::create(['name' => 'Admin']);
-        $Operator = Role::create(['name' => 'Operator']);
-        $adminbaak = Role::create(['name' => 'Admin Baak']);
-        $adminkeuangan = Role::create(['name' => 'Admin Keuangan']);
-        $mahasiswa = Role::create(['name' => 'Mahasiswa']);
+        $owner = Role::create(['name' => 'Owner']);
+        $kepalagudang = Role::create(['name' => 'Kepala Gudang']);
+        $staffproduksi = Role::create(['name' => 'Staff Produksi']);
 
-        $admin->givePermissionTo([
-            'create-user',
-            'edit-user',
-            'delete-user',
-            'create-product',
-            'edit-product',
-            'delete-product'
+        $owner->givePermissionTo([
+            'create-masuk',
+            'edit-masuk',
+            'delete-masuk',
+            'show-masuk',
+            'create-stok',
+            'edit-stok',
+            'delete-stok',
+            'show-stok',
+            'create-keluar',
+            'edit-keluar',
+            'delete-keluar',
+            'show-keluar',
+            'show-notifikasi',
+            'show-dashboard'
         ]);
 
-        $Operator->givePermissionTo([
-            'create-product',
-            'edit-product',
-            'delete-product'
+        $kepalagudang->givePermissionTo([
+            'create-masuk',
+            'edit-masuk',
+            'delete-masuk',
+            'show-masuk',
+            'create-stok',
+            'edit-stok',
+            'delete-stok',
+            'show-stok',
+            'create-keluar',
+            'edit-keluar',
+            'delete-keluar',
+            'show-keluar',
+            'show-notifikasi',
+            'show-dashboard'
         ]);
 
-        $adminbaak->givePermissionTo([
-            'create-mahasiswa',
-            'edit-mahasiswa',
-            'delete-mahasiswa'
+        $staffproduksi->givePermissionTo([
+            'show-stock'
         ]);
 
-        $adminkeuangan->givePermissionTo([
-            'show-mahasiswa'
-        ]);
-
-        $mahasiswa->givePermissionTo([
-            'edit-mahasiswa'
-        ]);
     }
 }
